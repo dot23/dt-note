@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="">
+<link rel="icon" href="../../favicon.ico">
+<title>MyDimension编辑系统</title>
+<!-- Bootstrap core CSS -->
+<link href="libs/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<!-- Custom styles for this template -->
+<link href="static/admin/css/dashboard.css" rel="stylesheet">
+<link href="static/admin/css/public.css" rel="stylesheet">
+<!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+<!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+<script src="libs/bootstrap/js/ie-emulation-modes-warning.js"></script>
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+<script src="http://cdn.bootcss.com/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+</head>
+<body>
+<{include file="../public/header.html"}>
+	<div class="container-fluid">
+      	<div class="row">
+  		<{include file="../public/menu.html"}>
+			<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+				<div class="panel panel-default">
+				<!-- Default panel contents -->
+					<div class="panel-heading">当前操作：栏目列表
+					  	<a href="index.php?p=admin&c=category&a=add">添加</a></div>
+						<!-- Table -->
+						<table class="table">
+							<thead>
+								<tr>
+								    <th>栏目ID</th>
+									<th>栏目名称</th>
+									<th>类别</th>
+									<th>管理</th>
+								</tr>
+							</thead>
+							<tbody>
+								<{foreach $arr as $v}>
+								<tr>
+									<td><{$v.id}></td>
+									<td><{$v.name}></td>
+									<td><{$v.type}></td>
+									<td><a href="index.php?p=admin&c=category&a=update&id=<{$v.id}>">修改</a>&nbsp;|&nbsp;
+									<a href="index.php?p=admin&c=category&a=delete&id=<{$v.id}>">删除</a></td>
+								</tr>
+								<{/foreach}>
+							</tbody>
+					  	</table>
+					</div>
+			</div><!-- col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main -->
+     	</div><!-- row -->
+	</div>
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="libs/jquery/jquery.min.js"></script>
+<script src="libs/bootstrap/js/bootstrap.min.js"></script>
+<script src="libs/bootstrap/js/docs.min.js"></script>
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+<script src="libs/bootstrap/js/ie10-viewport-bug-workaround.js"></script>
+</body>
+</html>

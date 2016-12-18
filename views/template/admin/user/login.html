@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang='zh'>
+<head>
+<meta charset="UTF-8">
+<link rel='stylesheet' href='libs/bootstrap/css/bootstrap.min.css'/>
+<link rel="stylesheet" href="static/admin/css/public.css"/>
+<title>编辑系统登录</title>
+</head>
+<body>
+<form class="form-horizontal" role='form' action="index.php?p=admin&c=user&a=check" method="post">
+	<div class='form-group'>
+		<div class="col-sm-10">
+			<label for="inputUsername">账号：</label>
+			<input type="text" name="username" class="form-control" id="inputUsername" placeholder="请输入账号" />
+		</div>
+	</div>
+	<div class="form-group">
+		<div class="col-sm-10">
+			<label for="inputPassword">密码：</label>
+			<input type="password" name='password' class="form-control" id="inputPassword" placeholder="请输入密码"/>
+		</div>
+	</div>
+	<div class="form-group">
+		<div class="col-sm-10">
+			<label for="inputVerity">验证码：</label>
+			<input type="text" name="verity" class="form-control" id="inputCode" style="width:20%;">
+			<input class="btn btn-lg btn-primary" type="button" id="checkCode" onclick="createCode()">
+		</div>
+	</div>
+	<div class="form-group">
+		<button class="btn btn-lg btn-primary btn-position" type="submit" onclick="verifyCode()">登录</button>
+	</div>
+</form>
+<script src="static/admin/js/verify.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
